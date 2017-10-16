@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class LocalDataRequest: DataRequest {
+open class LocalDataRequest: DataRequest {
     public init() {}
     
-    public func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
+    open func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
         // Override in your custom class
         fatalError("Must override. Handle load request in custom class.")
     }
