@@ -8,7 +8,9 @@
 
 import Foundation
 
-public struct NetworkDataRequest: NetworkRequest {}
+public struct NetworkDataRequest: NetworkRequest {
+    public init() {}
+}
 
 extension NetworkDataRequest: DataRequest {
     public func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
