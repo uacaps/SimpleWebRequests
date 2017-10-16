@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SimpleWebServiceRequests'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SimpleWebServiceRequests.'
+  s.summary          = 'iOS web requests made simple.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'This library lets you easily add a web layer to your project and even add mock or local data requests for easy testing without access to the server.'
 
   s.homepage         = 'https://github.com/Niklas Fahl/SimpleWebServiceRequests'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -28,9 +26,9 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/Niklas Fahl/SimpleWebServiceRequests.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = 'SimpleWebServiceRequests/Classes/**/*'
+  s.source_files = 'SimpleWebServiceRequests/Source/**/*'
   
   # s.resource_bundles = {
   #   'SimpleWebServiceRequests' => ['SimpleWebServiceRequests/Assets/*.png']
