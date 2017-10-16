@@ -10,6 +10,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+Coming soon...
+
 ## Installation
 
 SimpleWebRequests is available through [CocoaPods](http://cocoapods.org). To install
