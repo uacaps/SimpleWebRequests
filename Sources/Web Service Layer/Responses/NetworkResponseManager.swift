@@ -24,7 +24,7 @@ public struct NetworkResponseManager<Model: Codable> {
             return .httpError(statusCode: httpResponse.statusCode)
         }
         
-        guard let model: Model = JSONCoder().decode(data: data) else {
+        guard let model: Model = JSONCoder.decode(data: data) else {
             // JSON Decode Error
             return .error(error: error!)
         }

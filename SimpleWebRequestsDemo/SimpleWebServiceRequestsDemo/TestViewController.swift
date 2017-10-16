@@ -55,7 +55,7 @@ class TestViewController: UIViewController {
         
 //        let body = Roll(id: 1, name: "Beast")
 //        var resource = AddRollResource()
-//        resource.setBody(body: JSONCoder().encode(object: body))
+//        resource.setBody(body: JSONCoder.encode(object: body))
 //        let _ = NetworkDataRequest(resource: resource).load { (response) in
 //            switch response {
 //            case let .success(model):
