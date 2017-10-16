@@ -10,7 +10,7 @@ import Foundation
 
 public final class JSONCoder {
     
-    func encode<T>(object: T) -> Data? where T: Encodable {
+    public func encode<T>(object: T) -> Data? where T: Encodable {
         do {
             return try JSONEncoder().encode(object)
         } catch let error {
@@ -19,7 +19,7 @@ public final class JSONCoder {
         }
     }
     
-    func decode<T>(data: Data?) -> T? where T: Decodable {
+    public func decode<T>(data: Data?) -> T? where T: Decodable {
         guard let data = data else { return nil }
         
         do {

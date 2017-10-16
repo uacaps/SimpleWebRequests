@@ -16,7 +16,7 @@ struct GetArticlesResource: DataResource {
     var urlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default
     var httpMethod: HttpMethod = .get
     var headers: [String: String]?
-    var baseUrl: String = MyApiInformation().dataSource.baseAddress
+    var baseUrl: String = MyApiInformation().dataSource.baseUrl
     var methodPath: String? = "blog.json"
     var query: String?
     var body: Data?

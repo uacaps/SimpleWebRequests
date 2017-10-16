@@ -9,11 +9,11 @@
 import Foundation
 
 public struct NetworkResponseManager<Model: Codable> {
-    var data: Data?
-    var response: URLResponse?
-    var error: Error?
+    public var data: Data?
+    public var response: URLResponse?
+    public var error: Error?
     
-    func dataResponse() -> DataResponse<Model> {
+    public func dataResponse() -> DataResponse<Model> {
         guard error == nil && data != nil else {
             // General Error
             return .error(error: error!)

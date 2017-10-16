@@ -16,6 +16,11 @@ public enum DataSourceType {
 }
 
 public struct DataSource {
-    var type: DataSourceType
-    var baseAddress: String
+    public var type: DataSourceType
+    public var baseUrl: String
+    
+    public init(type: DataSourceType, baseUrl: String) {
+        self.type = type
+        self.baseUrl = baseUrl
+    }
 }

@@ -40,15 +40,3 @@ public extension DataResource {
         return URL(string: url)
     }
 }
-
-public struct CustomDataResource<T: Codable>: DataResource {
-    public typealias Model = T
-    
-    public var urlSessionConfiguration: URLSessionConfiguration
-    public var httpMethod: HttpMethod
-    public var headers: [String: String]?
-    public var baseUrl: String
-    public var methodPath: String?
-    public var query: String?
-    public var body: Data?
-}

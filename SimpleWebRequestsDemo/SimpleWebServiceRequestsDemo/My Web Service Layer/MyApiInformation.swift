@@ -10,8 +10,8 @@ import Foundation
 
 struct MyApiInformation: ApiInformation {
     #if DEBUG
-    var dataSource: DataSource = DataSource(type: .mock, baseAddress: "")
+    var dataSource: DataSource = DataSource(type: .mock, baseUrl: "")
     #else
-    var dataSource: DataSource = DataSource(type: .development, baseAddress: "https://swift.mrgott.pro")
+    var dataSource: DataSource = DataSource(type: .development, baseUrl: "https://swift.mrgott.pro")
     #endif
 }
