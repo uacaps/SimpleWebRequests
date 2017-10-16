@@ -4,10 +4,6 @@
 [![License](https://img.shields.io/cocoapods/l/SimpleWebRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebRequests)
 [![Platform](https://img.shields.io/cocoapods/p/SimpleWebRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebRequests)
 
-## Example
-
-To run the demo project, clone the repo, and run `pod install` from the SimpleWebRequestsDemo directory first.
-
 ## Requirements
 
 Coming soon...
