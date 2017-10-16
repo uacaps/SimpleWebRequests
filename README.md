@@ -1,9 +1,8 @@
 # SimpleWebServiceRequests
 
-[![CI Status](http://img.shields.io/travis/Niklas Fahl/SimpleWebServiceRequests.svg?style=flat)](https://travis-ci.org/Niklas Fahl/SimpleWebServiceRequests)
-[![Version](https://img.shields.io/cocoapods/v/SimpleWebServiceRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebServiceRequests)
-[![License](https://img.shields.io/cocoapods/l/SimpleWebServiceRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebServiceRequests)
-[![Platform](https://img.shields.io/cocoapods/p/SimpleWebServiceRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebServiceRequests)
+[![Version](https://img.shields.io/cocoapods/v/SimpleWebRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebServiceRequests)
+[![License](https://img.shields.io/cocoapods/l/SimpleWebRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebServiceRequests)
+[![Platform](https://img.shields.io/cocoapods/p/SimpleWebRequests.svg?style=flat)](http://cocoapods.org/pods/SimpleWebServiceRequests)
 
 ## Example
 
@@ -17,7 +16,7 @@ SimpleWebServiceRequests is available through [CocoaPods](http://cocoapods.org).
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SimpleWebServiceRequests'
+pod 'SimpleWebRequests'
 ```
 
 ## Author
