@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SimpleWebServiceRequests'
+  s.name             = 'SimpleWebRequests'
   s.version          = '0.1.0'
   s.summary          = 'iOS web requests made simple.'
 
@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
   s.description      = 'This library lets you easily add a web layer to your project and even add mock or local data requests for easy testing without access to the server.'
 
-  s.homepage         = 'https://github.com/Niklas Fahl/SimpleWebServiceRequests'
+  s.homepage         = 'https://github.com/fahlout/SimpleWebRequests'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Niklas Fahl' => 'niklas.fahl@ua.edu' }
-  s.source           = { :git => 'https://github.com/Niklas Fahl/SimpleWebServiceRequests.git', :tag => s.version.to_s }
+  s.author           = { 'Niklas Fahl' => 'niklas.fahl@icloud.com' }
+  s.source           = { :git => 'https://github.com/fahlout/SimpleWebRequests.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
