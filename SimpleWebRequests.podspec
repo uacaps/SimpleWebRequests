@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'SimpleWebServiceRequests/Sources/**/*'
+  s.source_files = 'SimpleWebRequests/Sources/**/*'
   
   # s.resource_bundles = {
   #   'SimpleWebServiceRequests' => ['SimpleWebServiceRequests/Assets/*.png']
