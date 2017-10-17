@@ -49,8 +49,8 @@ struct GetArticlesResource: DataResource {
     var urlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default
     var httpMethod: HttpMethod = .get
     var headers: [String: String]?
-    var baseUrl: String = MyApiInformation().dataSource.baseUrl
-    var methodPath: String? = "blog.json"
+    var baseUrl: String = "https://www.test.com"
+    var methodPath: String? = "api/test"
     var query: String?
     var body: Data?
 }
@@ -88,6 +88,15 @@ If your request requires a query set the query of the resource as shown below:
 ```swift
 //let resource = AddArticlesResource()
 resource.setQuery(query: "?something=something")
+//let sessionTask = NetworkDataRequest(resource: resource).load { (response) in
+//...
+```
+
+If your request requires headers set the headers of the resource as shown below:
+
+```swift
+//let resource = AddArticlesResource()
+resource.setHeaders(headers: ["SomeHeaderKey": "SomeHeaderValue"])
 //let sessionTask = NetworkDataRequest(resource: resource).load { (response) in
 //...
 ```
