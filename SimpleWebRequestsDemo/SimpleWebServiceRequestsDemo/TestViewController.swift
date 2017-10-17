@@ -19,10 +19,13 @@ class TestViewController: UIViewController {
     @IBAction func didTapMakeWebCall(_ sender: Any) {
         self.textView.text = "Making get request..."
         
-        let resource = GetArticlesResource()
+        
         
         // Web calls are as easy as the commented out call below and only your resources need to be set up for this to work!
-        
+//        let resource = AddArticlesResource()
+//        let body = Article(title: "Test 1", description: "Testing article description.")
+//        resource.setBody(body: JSONCoder.encode(object: body)) // optional
+//        resource.setQuery(query: "?something=something") // optional
 //        let _ = NetworkDataRequest(resource: resource).load { (response) in
 //            switch response {
 //            case let .success(model):
@@ -34,7 +37,25 @@ class TestViewController: UIViewController {
 //            }
 //        }
         
-        let _ = MyDataRequestManager.shared.loadRequest(with: resource) { (response) in
+        // Example doing all leg work in controller regarding the resource setup
+//        let resource = GetArticlesResource()
+//        resource.setBody(body: JSONCoder.encode(object: body)) // optional
+//        resource.setQuery(query: "?something=something") // optional
+//        let _ = MyDataRequestManager.shared.loadRequest(with: resource) { (response) in
+//            switch response {
+//            case let .success(model):
+//                var text = ""
+//                model.forEach { text += "Title: \($0.title)\nDescription: \($0.description)\n\n" }
+//                self.textView.text = text
+//            case let .error(error):
+//                print("ERROR OH NO!!! \(error)")
+//            default:
+//                return
+//            }
+//        }
+        
+        // Example representing wrapper functions doing the resource setup and representing more closely the type of request that is made in the function signature
+        let _ = MyDataRequestManager.shared.getArticles { (response) in
             switch response {
             case let .success(model):
                 var text = ""

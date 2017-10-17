@@ -21,3 +21,10 @@ struct GetArticlesResource: DataResource {
     var query: String?
     var body: Data?
 }
+
+extension GetArticlesResource {
+    
+    func articlesQuery(with id: Int) -> String {
+        return "?id=\(id)"
+    }
+}

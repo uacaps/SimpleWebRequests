@@ -17,3 +17,24 @@ public struct MyDataRequestManager: DataRequestManager {
     
     public static var shared: MyDataRequestManager = MyDataRequestManager()
 }
+
+// MARK: - Web Service Functions
+
+extension MyDataRequestManager {
+
+    // Articles
+    
+    // Example including setting a query
+    func getArticles(completion: @escaping (DataResponse<[Article]>) -> Void) -> URLSessionTask {
+        let resource = GetArticlesResource()
+//        resource.setQuery(query: resource.articlesQuery())
+        return MyDataRequestManager.shared.loadRequest(with: resource, completion: completion)
+    }
+    
+    // Example including setting a body
+//    func addArticle(with body: Article, completion: @escaping (DataResponse<Article>) -> Void) -> URLSessionTask {
+//        let resource = AddArticlesResource()
+//        resource.setBody(body: JSONCoder.encode(object: body))
+//        return MyDataRequestManager.shared.loadRequest(with: resource, completion: completion)
+//    }
+}
