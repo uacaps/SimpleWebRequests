@@ -30,7 +30,7 @@ Add all of the files in the 'Sources' directory to your project and you'll be re
 
 ## Author
 
-Niklas Fahl, niklas.fahl@icloud.com
+[Niklas Fahl (fahlout)](http://bit.ly/fahlout) - [LinkedIn](http://bit.ly/linked-in-niklas-fahl)
 
 ## License
 
