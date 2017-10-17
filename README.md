@@ -34,14 +34,10 @@ This library allows you to have your web layer up and running quickly, but also 
 
 To get started all you need to do is add a subclass of 'DataResource' for each of your web requests to your project. I recommend adding a file called '{ProjectName}DataResources.swift and putting your resources in this file as shown below:
 
-*Note: The query and resource parameters are usually not static and will be set using 'setBody:' and 'setQuery:' at the time a resource is instatiated and used.*
+*Note: The header, query and resource parameters are usually not static and will be set using 'setHeaders:', 'setBody:' and 'setQuery:' at the time a resource is instatiated and used.*
 
 ```swift
-//  MyApiResources.swift
-
-import Foundation
-
-// MARK: - Articles (GET)
+//  {ProjectName}ApiResources.swift
 
 struct GetArticlesResource: DataResource {
     typealias Model = [Article]
@@ -103,7 +99,46 @@ resource.setHeaders(headers: ["SomeHeaderKey": "SomeHeaderValue"])
 
 ## Advanced Setup
 
-Coming soon...
+The advanced setup lets you automatically switch between different data sources through a common manager class. For this setup you will need to inherit from the following structs/protocols. Again I'm recommending to prefix your classes with your project name for claity.
+
+```
+protocol ApiInformation
+protocol DataRequestManager
+class MockDataRequestManager (optional)
+class LocalDataRequestManager (optional)
+```
+
+Let's start with the ApiInformation. This class will let you set your desired data source that's used at runtime. In the below example I'm switching between data sources depending on if my app is running in debug or in release as set in my apps build configuration.
+
+```swift
+//  {ProjectName}ApiInformation.swift
+
+struct {ProjectName}ApiInformation: ApiInformation {
+    #if DEBUG
+    var dataSource: DataSource = DataSource(type: .development, baseUrl: "http://development.something.com")
+    #else
+    var dataSource: DataSource = DataSource(type: .release, baseUrl: "https://release.something.com")
+    #endif
+}
+```
+
+The next part to be setup is the data request manager that handles the data source switching as shown below:
+
+*Note: The online data request manager will be set to a new instance of NetworkDataRequestManager unless you desire to to make your own class inheriting from it to make desired changes to the class.*
+
+```swift
+//  {ProjectName}DataRequestManager.swift
+
+public struct {ProjectName}DataRequestManager: DataRequestManager {
+    public typealias Resource = DataResource
+    public var apiInformation: ApiInformation = {ProjectName}ApiInformation()
+    public var onlineDataRequestManager: NetworkDataRequestManager = NetworkDataRequestManager()
+    public var localDataRequestManager: LocalDataRequestManager? = {ProjectName}LocalDataRequestManager()
+    public var mockDataRequestManager: MockDataRequestManager? = {ProjectName}MockDataRequestManager()
+    
+    public static var shared: MyDataRequestManager = {ProjectName}DataRequestManager()
+}
+```
 
 ## Author
 
