@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class LocalDataRequest: DataRequest {
+open class LocalDataRequestManager: DataRequest {
     public init() {}
     
     open func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class MockDataRequest: DataRequest {
+open class MockDataRequestManager: DataRequest {
     public init() {}
     
     open func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {

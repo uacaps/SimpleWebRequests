@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class MyLocalDataRequest: LocalDataRequest {
+public class MyLocalDataRequestManager: LocalDataRequestManager {
     public override func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
         // Get offline data
         return handleRequest(with: resource, completion: completion)
     }
 }
 
-extension MyLocalDataRequest {
+extension MyLocalDataRequestManager {
     
     // MARK: - Handle Request
     

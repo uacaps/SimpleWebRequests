@@ -11,9 +11,9 @@ import Foundation
 public struct MyDataRequestManager: DataRequestManager {
     public typealias Resource = DataResource
     public var apiInformation: ApiInformation = MyApiInformation()
-    public var onlineDataRequest: NetworkDataRequest = NetworkDataRequest()
-    public var localDataRequest: LocalDataRequest? = MyLocalDataRequest()
-    public var mockDataRequest: MockDataRequest? = MyMockDataRequest()
+    public var onlineDataRequestManager: NetworkDataRequestManager = NetworkDataRequestManager()
+    public var localDataRequestManager: LocalDataRequestManager? = MyLocalDataRequestManager()
+    public var mockDataRequestManager: MockDataRequestManager? = MyMockDataRequestManager()
     
     public static var shared: MyDataRequestManager = MyDataRequestManager()
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct NetworkDataRequest: NetworkRequest {
+public struct NetworkDataRequestManager: NetworkRequest {
     public init() {}
 }
 
-extension NetworkDataRequest: DataRequest {
+extension NetworkDataRequestManager: DataRequest {
     public func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
         // Get parameters to make network request
         guard let url = resource.url else { return URLSessionTask() }

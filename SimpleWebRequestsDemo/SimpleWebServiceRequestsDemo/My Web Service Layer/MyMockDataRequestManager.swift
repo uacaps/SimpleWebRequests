@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MyMockDataRequest: MockDataRequest {
+public class MyMockDataRequestManager: MockDataRequestManager {
     // All your custom variables to allow mocking your server
     var articles: [Article] = [Article(title: "Mock 1", description: "Mocking an article."), Article(title: "Mock 2", description: "Mocking an article again.")]
     
@@ -17,7 +17,7 @@ public class MyMockDataRequest: MockDataRequest {
     }
 }
 
-extension MyMockDataRequest {
+extension MyMockDataRequestManager {
     
     // MARK: - Handle Request
     
@@ -32,7 +32,7 @@ extension MyMockDataRequest {
     }
 }
 
-extension MyMockDataRequest {
+extension MyMockDataRequestManager {
     
     // MARK: - Rolls (GET, POST)
     
