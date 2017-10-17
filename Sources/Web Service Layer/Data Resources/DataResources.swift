@@ -15,13 +15,17 @@ public protocol DataResource {
     var headers: [String: String]? { get }
     var baseUrl: String { get }
     var methodPath: String? { get }
-    var query: String? { get }
+    var query: String? { get set }
     var body: Data? { get set }
 }
 
 public extension DataResource {
     mutating func setBody(body: Data?) {
         self.body = body
+    }
+    
+    mutating func setQuery(query: String?) {
+        self.query = query
     }
     
     var url: URL? {
@@ -35,7 +39,7 @@ public extension DataResource {
         guard let query = query else {
             return URL(string: url)
         }
-        url += "?" + query
+        url += query
         
         return URL(string: url)
     }
