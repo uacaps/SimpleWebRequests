@@ -136,7 +136,81 @@ public struct {ProjectName}DataRequestManager: DataRequestManager {
     public var localDataRequestManager: LocalDataRequestManager? = {ProjectName}LocalDataRequestManager()
     public var mockDataRequestManager: MockDataRequestManager? = {ProjectName}MockDataRequestManager()
     
-    public static var shared: MyDataRequestManager = {ProjectName}DataRequestManager()
+    public static var shared: {ProjectName}DataRequestManager = {ProjectName}DataRequestManager()
+}
+```
+
+The mock as well as the local request manager are setup very similarly and really depend on your implementation and how you want to handle these data requests as this library only provides a shell for these parts so that the data request manager can switch based on data sources. Below is an example of what each may look like:
+
+Mock Data Request Manager
+*Note: In the switch statement I'm showing how each resource case can be handled based on its type. Make sure to generate and return your appropriate mock data for each case statement.*
+
+```swift
+//  {ProjectName}MockDataRequest.swift
+
+public class {ProjectName}MockDataRequestManager: MockDataRequestManager {
+    // All your custom variables to allow mocking your server
+    var articles: [Article] = [Article(title: "Mock 1", description: "Mocking an article."), Article(title: "Mock 2", description: "Mocking an article again.")]
+    
+    public override func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
+        return handleRequest(with: resource, completion: completion)
+    }
+}
+
+extension {ProjectName}MockDataRequestManager {
+    
+    // MARK: - Handle Request
+    
+    func handleRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
+        switch resource.self {
+        case is GetArticlesResource:
+            getArticles(completion: completion as! (DataResponse<GetArticlesResource.Model>) -> Void)
+        default:
+            return URLSessionTask()
+        }
+        return URLSessionTask()
+    }
+}
+
+extension {ProjectName}MockDataRequestManager {
+    
+    // MARK: - Articles (GET)
+    
+    func getArticles(completion: @escaping (DataResponse<GetArticlesResource.Model>) -> Void)  {
+        let response: DataResponse = .success(model: articles)
+        completion(response)
+    }
+}
+```
+
+Local Data Request Manager
+*Note: In the switch statement I'm showing how each resource case can be handled based on its type. Make sure to return your appropriate data from a local database for example for each case statement.*
+
+```swift
+//  {ProjectName}LocalDataRequest.swift
+
+public class {ProjectName}LocalDataRequestManager: LocalDataRequestManager {
+    public override func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
+        // Get offline data
+        return handleRequest(with: resource, completion: completion)
+    }
+}
+
+extension {ProjectName}LocalDataRequestManager {
+    
+    // MARK: - Handle Request
+    
+    func handleRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask {
+        switch resource.self {
+        case is GetArticlesResource:
+            let error = NSError(domain: "Local Data Fetch Error", code: 1, userInfo: nil)
+            let response: DataResponse = DataResponse<Resource.Model>.error(error: error)
+            completion(response)
+        default:
+            return URLSessionTask()
+        }
+        return URLSessionTask()
+    }
 }
 ```
 
