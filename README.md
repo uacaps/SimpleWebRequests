@@ -55,16 +55,15 @@ struct GetArticlesResource: DataResource {
 After setting up your resources you are ready to make some web calls as shown below:
 
 ```swift
-let resource = AddArticlesResource()
-let body = Article(title: "Test 1", description: "Testing article description.")
+let resource = GetArticlesResource()
 let sessionTask = NetworkDataRequest(resource: resource).load { (response) in
     switch response {
     case let .success(model):
-        self.textView.text = "Title: \(model.title)\nDescription: \(model.description)"
+        // Do something with the model coming back
     case let .error(error):
-        print("General Error: \(error)")
+        // Handle general error
     case let .httpError(statusCode):
-        print("HTTP Error - Status Code: \(statusCode)")
+        // Handle HTTP error
     }
 }
 ```
@@ -212,6 +211,70 @@ extension {ProjectName}LocalDataRequestManager {
             return URLSessionTask()
         }
         return URLSessionTask()
+    }
+}
+```
+
+This is all of the setup needed for the advanced setup. Below is an example on how you would handle a call using the advanced setup.
+
+```swift
+let resource = GetArticlesResource()
+let sessionTask = {ProjectName}DataRequestManager.shared.loadRequest(with: resource) { (response) in
+    switch response {
+    case let .success(model):
+        // Do something with the model coming back
+    case let .error(error):
+        // Handle general error
+    case let .httpError(statusCode):
+        // Handle HTTP error
+    }
+}
+```
+
+There is one more thing to consider to help with clean code when calling one of these requests. Consider extending your data request manager and add functions that represent what each of your requests does and that handles the setup of your resource including the setting of your headers, body, and query. And example of your this would look like including how to call it is shown below:
+
+*Note: I have extended my resource class to generate my query parameter based on certain parameters.
+
+```swift
+// {ProjectName}DataRequestManager.swift
+
+extension {ProjectName}DataRequestManager {
+
+    func getArticles(completion: @escaping (DataResponse<[Article]>) -> Void) -> URLSessionTask {
+        let resource = GetArticlesResource()
+        resource.setQuery(query: resource.articlesQuery())
+        return {ProjectName}DataRequestManager.shared.loadRequest(with: resource, completion: completion)
+    }
+    
+    // Example including setting a body
+    func addArticle(with body: Article, completion: @escaping (DataResponse<Article>) -> Void) -> URLSessionTask {
+        let resource = AddArticlesResource()
+        resource.setBody(body: JSONCoder.encode(object: body))
+        return {ProjectName}DataRequestManager.shared.loadRequest(with: resource, completion: completion)
+    }
+}
+
+
+// {ProjectName}DataResources.swift
+
+extension GetArticlesResource {
+    
+    func articlesQuery(with id: Int) -> String {
+        return "?id=\(id)"
+    }
+}
+
+
+// SomeFile.swift
+
+let sessionTask = {ProjectName}DataRequestManager.shared.getArticles { (response) in
+    switch response {
+    case let .success(model):
+        // Do something with the model coming back
+    case let .error(error):
+        // Handle general error
+    case let .httpError(statusCode):
+        // Handle HTTP error
     }
 }
 ```
