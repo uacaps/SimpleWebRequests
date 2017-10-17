@@ -1,6 +1,6 @@
 //
 //  DataResources.swift
-//  WebserviceOnSteroids
+//  SimpleWebServiceRequestsDemo
 //
 //  Created by Niklas Fahl on 10/13/17.
 //  Copyright © 2017 Niklas Fahl. All rights reserved.
@@ -10,9 +10,9 @@ import Foundation
 
 public protocol DataResource {
     associatedtype Model: Codable
-    var urlSessionConfiguration: URLSessionConfiguration { get }
+    var urlSessionConfiguration: URLSessionConfiguration { get set }
     var httpMethod: HttpMethod { get }
-    var headers: [String: String]? { get }
+    var headers: [String: String]? { get set }
     var baseUrl: String { get }
     var methodPath: String? { get }
     var query: String? { get set }
@@ -20,14 +20,7 @@ public protocol DataResource {
 }
 
 public extension DataResource {
-    mutating func setBody(body: Data?) {
-        self.body = body
-    }
-    
-    mutating func setQuery(query: String?) {
-        self.query = query
-    }
-    
+    // Full Url
     var url: URL? {
         var url = baseUrl
         
@@ -42,5 +35,22 @@ public extension DataResource {
         url += query
         
         return URL(string: url)
+    }
+    
+    // Setters
+    mutating func setUrlSessionConfiguration(urlSessionConfiguration: URLSessionConfiguration) {
+        self.urlSessionConfiguration = urlSessionConfiguration
+    }
+    
+    mutating func setHeaders(headers: [String: String]) {
+        self.headers = headers
+    }
+    
+    mutating func setBody(body: Data?) {
+        self.body = body
+    }
+    
+    mutating func setQuery(query: String?) {
+        self.query = query
     }
 }

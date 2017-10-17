@@ -1,6 +1,6 @@
 //
 //  MyMockDataRequest.swift
-//  WebserviceOnSteroids
+//  SimpleWebServiceRequestsDemo
 //
 //  Created by Niklas Fahl on 10/13/17.
 //  Copyright © 2017 Niklas Fahl. All rights reserved.
@@ -34,7 +34,7 @@ extension MyMockDataRequestManager {
 
 extension MyMockDataRequestManager {
     
-    // MARK: - Rolls (GET, POST)
+    // MARK: - Articles (GET)
     
     func getArticles(completion: @escaping (DataResponse<GetArticlesResource.Model>) -> Void)  {
         let response: DataResponse = .success(model: articles)

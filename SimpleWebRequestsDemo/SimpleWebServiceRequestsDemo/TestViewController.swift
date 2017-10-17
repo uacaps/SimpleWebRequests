@@ -1,6 +1,6 @@
 //
 //  TestViewController.swift
-//  WebserviceOnSteroids
+//  SimpleWebServiceRequestsDemo
 //
 //  Created by Niklas Fahl on 10/12/17.
 //  Copyright © 2017 Niklas Fahl. All rights reserved.
@@ -29,7 +29,7 @@ class TestViewController: UIViewController {
 //        let _ = NetworkDataRequest(resource: resource).load { (response) in
 //            switch response {
 //            case let .success(model):
-//                self.textView.text = "Id: \(model.id)\nName: \(model.name)"
+//                self.textView.text = "Title: \(model.title)\nDescription: \(model.description)"
 //            case let .error(error):
 //                print("ERROR OH NO!!! \(error)")
 //            default:
