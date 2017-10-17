@@ -73,7 +73,7 @@ let sessionTask = NetworkDataRequest(resource: resource).load { (response) in
 }
 ```
 
-If your request requires a body set the body of the resource as shown below:
+If your request requires a body set the body of the resource directly in the class definition if they are non-changing or as shown below:
 
 ```swift
 //let resource = AddArticlesResource()
@@ -83,7 +83,7 @@ resource.setBody(body: JSONCoder.encode(object: body))
 //...
 ```
 
-If your request requires a query set the query of the resource as shown below:
+If your request requires a query set the query of the resource directly in the class definition if they are non-changing or as shown below:
 
 ```swift
 //let resource = AddArticlesResource()
@@ -92,7 +92,7 @@ resource.setQuery(query: "?something=something")
 //...
 ```
 
-If your request requires headers set the headers of the resource as shown below:
+If your request requires headers set the headers of the resource directly in the class definition if they are non-changing or as shown below:
 
 ```swift
 //let resource = AddArticlesResource()
