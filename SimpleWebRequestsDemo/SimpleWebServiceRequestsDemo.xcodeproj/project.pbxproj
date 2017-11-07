@@ -14,23 +14,20 @@
 		6A3712761F95025300DE77C7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712751F95025300DE77C7 /* TestViewController.swift */; };
 		6A3712771F95025A00DE77C7 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A3712741F95025300DE77C7 /* TestViewController.xib */; };
 		6A3712811F9502A200DE77C7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37127D1F95029900DE77C7 /* Article.swift */; };
-		6A3712821F9502A500DE77C7 /* MyLocalDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37127A1F95029900DE77C7 /* MyLocalDataRequest.swift */; };
+		6A3712821F9502A500DE77C7 /* MyLocalDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37127A1F95029900DE77C7 /* MyLocalDataRequestManager.swift */; };
 		6A3712831F9502A500DE77C7 /* MyMockDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37127B1F95029900DE77C7 /* MyMockDataRequestManager.swift */; };
 		6A3712841F9502A500DE77C7 /* MyDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37127E1F95029900DE77C7 /* MyDataRequestManager.swift */; };
-		6A3712851F9502A500DE77C7 /* MyDataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A37127F1F95029900DE77C7 /* MyDataResources.swift */; };
 		6A3712861F9502A500DE77C7 /* MyApiInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712801F95029900DE77C7 /* MyApiInformation.swift */; };
 		6A3712E11F95071200DE77C7 /* DataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712CE1F95070D00DE77C7 /* DataRequestManager.swift */; };
 		6A3712E21F95071600DE77C7 /* ApiInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712D01F95070D00DE77C7 /* ApiInformation.swift */; };
 		6A3712E31F95071600DE77C7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712D11F95070D00DE77C7 /* DataSource.swift */; };
-		6A3712E41F95071900DE77C7 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712D31F95070D00DE77C7 /* DataResponse.swift */; };
-		6A3712E51F95071900DE77C7 /* NetworkResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712D41F95070D00DE77C7 /* NetworkResponseManager.swift */; };
-		6A3712E61F95071D00DE77C7 /* MockDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712D61F95070D00DE77C7 /* MockDataRequestManager.swift */; };
 		6A3712E71F95071F00DE77C7 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712D81F95070D00DE77C7 /* JSONCoder.swift */; };
-		6A3712E81F95072300DE77C7 /* LocalDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712DA1F95070D00DE77C7 /* LocalDataRequestManager.swift */; };
 		6A3712E91F95072600DE77C7 /* DataResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712DC1F95070D00DE77C7 /* DataResources.swift */; };
 		6A3712EA1F95072A00DE77C7 /* NetworkDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712DE1F95070D00DE77C7 /* NetworkDataRequestManager.swift */; };
 		6A3712EB1F95072A00DE77C7 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712DF1F95070D00DE77C7 /* DataRequest.swift */; };
 		6A3712EC1F95072A00DE77C7 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712E01F95070D00DE77C7 /* NetworkRequest.swift */; };
+		6A5A6E511FB25C81001F65A0 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A6E501FB25C81001F65A0 /* DataResponse.swift */; };
+		6AC3E3721FB223FA0074FF09 /* MyNetworkDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3E3711FB223FA0074FF09 /* MyNetworkDataRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,24 +51,21 @@
 		6A37124A1F95018600DE77C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3712741F95025300DE77C7 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		6A3712751F95025300DE77C7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		6A37127A1F95029900DE77C7 /* MyLocalDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocalDataRequest.swift; sourceTree = "<group>"; };
+		6A37127A1F95029900DE77C7 /* MyLocalDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocalDataRequestManager.swift; sourceTree = "<group>"; };
 		6A37127B1F95029900DE77C7 /* MyMockDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMockDataRequestManager.swift; sourceTree = "<group>"; };
 		6A37127D1F95029900DE77C7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		6A37127E1F95029900DE77C7 /* MyDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataRequestManager.swift; sourceTree = "<group>"; };
-		6A37127F1F95029900DE77C7 /* MyDataResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataResources.swift; sourceTree = "<group>"; };
 		6A3712801F95029900DE77C7 /* MyApiInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiInformation.swift; sourceTree = "<group>"; };
 		6A3712CE1F95070D00DE77C7 /* DataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestManager.swift; sourceTree = "<group>"; };
 		6A3712D01F95070D00DE77C7 /* ApiInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiInformation.swift; sourceTree = "<group>"; };
 		6A3712D11F95070D00DE77C7 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		6A3712D31F95070D00DE77C7 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
-		6A3712D41F95070D00DE77C7 /* NetworkResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseManager.swift; sourceTree = "<group>"; };
-		6A3712D61F95070D00DE77C7 /* MockDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataRequestManager.swift; sourceTree = "<group>"; };
 		6A3712D81F95070D00DE77C7 /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
-		6A3712DA1F95070D00DE77C7 /* LocalDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataRequestManager.swift; sourceTree = "<group>"; };
 		6A3712DC1F95070D00DE77C7 /* DataResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResources.swift; sourceTree = "<group>"; };
 		6A3712DE1F95070D00DE77C7 /* NetworkDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataRequestManager.swift; sourceTree = "<group>"; };
 		6A3712DF1F95070D00DE77C7 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		6A3712E01F95070D00DE77C7 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		6A5A6E501FB25C81001F65A0 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		6AC3E3711FB223FA0074FF09 /* MyNetworkDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNetworkDataRequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +139,10 @@
 		6A3712791F95029900DE77C7 /* My Web Service Layer */ = {
 			isa = PBXGroup;
 			children = (
-				6A37127A1F95029900DE77C7 /* MyLocalDataRequest.swift */,
+				6AC3E3711FB223FA0074FF09 /* MyNetworkDataRequestManager.swift */,
 				6A37127B1F95029900DE77C7 /* MyMockDataRequestManager.swift */,
+				6A37127A1F95029900DE77C7 /* MyLocalDataRequestManager.swift */,
 				6A37127E1F95029900DE77C7 /* MyDataRequestManager.swift */,
-				6A37127F1F95029900DE77C7 /* MyDataResources.swift */,
 				6A3712801F95029900DE77C7 /* MyApiInformation.swift */,
 				6A37127C1F95029900DE77C7 /* Models */,
 			);
@@ -177,8 +171,8 @@
 			children = (
 				6A3712CD1F95070D00DE77C7 /* Data Request Manager */,
 				6A3712CF1F95070D00DE77C7 /* Api Information */,
-				6A3712D21F95070D00DE77C7 /* Responses */,
 				6A3712D51F95070D00DE77C7 /* Data Request Managers */,
+				6A5A6E4F1FB25C6F001F65A0 /* Data Response */,
 				6A3712D71F95070D00DE77C7 /* JSON Coder */,
 				6A3712DB1F95070D00DE77C7 /* Data Resources */,
 				6A3712DD1F95070D00DE77C7 /* Online Data Requests */,
@@ -203,20 +197,9 @@
 			path = "Api Information";
 			sourceTree = "<group>";
 		};
-		6A3712D21F95070D00DE77C7 /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				6A3712D31F95070D00DE77C7 /* DataResponse.swift */,
-				6A3712D41F95070D00DE77C7 /* NetworkResponseManager.swift */,
-			);
-			path = Responses;
-			sourceTree = "<group>";
-		};
 		6A3712D51F95070D00DE77C7 /* Data Request Managers */ = {
 			isa = PBXGroup;
 			children = (
-				6A3712D61F95070D00DE77C7 /* MockDataRequestManager.swift */,
-				6A3712DA1F95070D00DE77C7 /* LocalDataRequestManager.swift */,
 				6A3712DE1F95070D00DE77C7 /* NetworkDataRequestManager.swift */,
 			);
 			path = "Data Request Managers";
@@ -245,6 +228,14 @@
 				6A3712E01F95070D00DE77C7 /* NetworkRequest.swift */,
 			);
 			path = "Online Data Requests";
+			sourceTree = "<group>";
+		};
+		6A5A6E4F1FB25C6F001F65A0 /* Data Response */ = {
+			isa = PBXGroup;
+			children = (
+				6A5A6E501FB25C81001F65A0 /* DataResponse.swift */,
+			);
+			path = "Data Response";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,26 +341,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A3712851F9502A500DE77C7 /* MyDataResources.swift in Sources */,
 				6A3712761F95025300DE77C7 /* TestViewController.swift in Sources */,
 				6A3712831F9502A500DE77C7 /* MyMockDataRequestManager.swift in Sources */,
 				6A3712341F95018600DE77C7 /* AppDelegate.swift in Sources */,
-				6A3712E51F95071900DE77C7 /* NetworkResponseManager.swift in Sources */,
 				6A3712E91F95072600DE77C7 /* DataResources.swift in Sources */,
 				6A3712E11F95071200DE77C7 /* DataRequestManager.swift in Sources */,
 				6A3712841F9502A500DE77C7 /* MyDataRequestManager.swift in Sources */,
 				6A3712E71F95071F00DE77C7 /* JSONCoder.swift in Sources */,
 				6A3712811F9502A200DE77C7 /* Article.swift in Sources */,
 				6A3712E21F95071600DE77C7 /* ApiInformation.swift in Sources */,
-				6A3712821F9502A500DE77C7 /* MyLocalDataRequest.swift in Sources */,
+				6A3712821F9502A500DE77C7 /* MyLocalDataRequestManager.swift in Sources */,
+				6A5A6E511FB25C81001F65A0 /* DataResponse.swift in Sources */,
 				6A3712E31F95071600DE77C7 /* DataSource.swift in Sources */,
-				6A3712E61F95071D00DE77C7 /* MockDataRequestManager.swift in Sources */,
 				6A3712EC1F95072A00DE77C7 /* NetworkRequest.swift in Sources */,
 				6A3712EA1F95072A00DE77C7 /* NetworkDataRequestManager.swift in Sources */,
-				6A3712E41F95071900DE77C7 /* DataResponse.swift in Sources */,
 				6A3712EB1F95072A00DE77C7 /* DataRequest.swift in Sources */,
 				6A3712861F9502A500DE77C7 /* MyApiInformation.swift in Sources */,
-				6A3712E81F95072300DE77C7 /* LocalDataRequestManager.swift in Sources */,
+				6AC3E3721FB223FA0074FF09 /* MyNetworkDataRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79J92XV598;
 				INFOPLIST_FILE = "SimpleWebServiceRequestsDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -530,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79J92XV598;
 				INFOPLIST_FILE = "SimpleWebServiceRequestsDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

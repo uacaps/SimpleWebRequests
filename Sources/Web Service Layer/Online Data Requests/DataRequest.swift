@@ -9,5 +9,6 @@
 import Foundation
 
 public protocol DataRequest {
-    func loadRequest<Resource: DataResource>(with resource: Resource, completion: @escaping (DataResponse<Resource.Model>) -> Void) -> URLSessionTask
+    func loadRequest<Model: Codable>(with resource: DataResource, completion: @escaping (Model?, Error?) -> Void) -> URLSessionTask
+    func loadVoidRequest(with resource: DataResource, completion: @escaping (Error?) -> Void) -> URLSessionTask
 }

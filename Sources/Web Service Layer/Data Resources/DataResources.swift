@@ -8,15 +8,14 @@
 
 import Foundation
 
-public protocol DataResource {
-    associatedtype Model: Codable
-    var urlSessionConfiguration: URLSessionConfiguration { get set }
-    var httpMethod: HttpMethod { get }
-    var headers: [String: String]? { get set }
-    var baseUrl: String { get }
-    var methodPath: String? { get }
-    var query: String? { get set }
-    var body: Data? { get set }
+public struct DataResource {
+    var urlSessionConfiguration: URLSessionConfiguration = .default
+    var httpMethod: HttpMethod = .get
+    var headers: [String: String]?
+    var baseUrl: String = ""
+    var methodPath: String?
+    var query: String?
+    var body: Data?
 }
 
 public extension DataResource {
@@ -35,22 +34,5 @@ public extension DataResource {
         url += query
         
         return URL(string: url)
-    }
-    
-    // Setters
-    mutating func setUrlSessionConfiguration(urlSessionConfiguration: URLSessionConfiguration) {
-        self.urlSessionConfiguration = urlSessionConfiguration
-    }
-    
-    mutating func setHeaders(headers: [String: String]) {
-        self.headers = headers
-    }
-    
-    mutating func setBody(body: Data?) {
-        self.body = body
-    }
-    
-    mutating func setQuery(query: String?) {
-        self.query = query
     }
 }

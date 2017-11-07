@@ -55,16 +55,18 @@ class TestViewController: UIViewController {
 //        }
         
         // Example representing wrapper functions doing the resource setup and representing more closely the type of request that is made in the function signature
-        let _ = MyDataRequestManager.shared.getArticles { (response) in
-            switch response {
-            case let .success(model):
+        let _ = MyDataRequestManager.shared.getArticles { (model, error) in
+            if let error = error {
+                switch error {
+                case URLError.notConnectedToInternet:
+                    print("You are not connected to the internet")
+                default:
+                    print("Error: \(error)")
+                }
+            } else if let model = model {
                 var text = ""
                 model.forEach { text += "Title: \($0.title)\nDescription: \($0.description)\n\n" }
                 self.textView.text = text
-            case let .error(error):
-                print("ERROR OH NO!!! \(error)")
-            default:
-                return
             }
         }
     }

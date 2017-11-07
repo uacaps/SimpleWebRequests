@@ -9,32 +9,32 @@
 import Foundation
 
 public struct MyDataRequestManager: DataRequestManager {
+    public typealias APIMethodsProtocol = APIMethods
+    
     public typealias Resource = DataResource
     public var apiInformation: ApiInformation = MyApiInformation()
-    public var onlineDataRequestManager: NetworkDataRequestManager = NetworkDataRequestManager()
-    public var localDataRequestManager: LocalDataRequestManager? = MyLocalDataRequestManager()
-    public var mockDataRequestManager: MockDataRequestManager? = MyMockDataRequestManager()
+    public var requestManager: APIMethodsProtocol {
+        switch apiInformation.dataSource.type {
+        case .release, .development:
+            return MyNetworkDataRequestManager()
+        case .local:
+            return MyLocalDataRequestManager()
+        case .mock:
+            return MyMockDataRequestManager()
+        }
+    }
     
     public static var shared: MyDataRequestManager = MyDataRequestManager()
 }
 
 // MARK: - Web Service Functions
 
-extension MyDataRequestManager {
+extension MyDataRequestManager: APIMethods {
 
     // Articles
     
     // Example including setting a query
-    func getArticles(completion: @escaping (DataResponse<[Article]>) -> Void) -> URLSessionTask {
-        let resource = GetArticlesResource()
-//        resource.setQuery(query: resource.articlesQuery())
-        return MyDataRequestManager.shared.loadRequest(with: resource, completion: completion)
+    public func getArticles(completion: @escaping ([Article]?, Error?) -> Void) -> URLSessionTask {
+        return requestManager.getArticles(completion: completion)
     }
-    
-    // Example including setting a body
-//    func addArticle(with body: Article, completion: @escaping (DataResponse<Article>) -> Void) -> URLSessionTask {
-//        let resource = AddArticlesResource()
-//        resource.setBody(body: JSONCoder.encode(object: body))
-//        return MyDataRequestManager.shared.loadRequest(with: resource, completion: completion)
-//    }
 }

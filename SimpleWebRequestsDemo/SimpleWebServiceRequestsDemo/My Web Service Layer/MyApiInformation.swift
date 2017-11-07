@@ -15,3 +15,7 @@ struct MyApiInformation: ApiInformation {
     var dataSource: DataSource = DataSource(type: .development, baseUrl: "https://swift.mrgott.pro")
     #endif
 }
+
+public protocol APIMethods {
+    func getArticles(completion: @escaping ([Article]?, Error?) -> Void) -> URLSessionTask
+}
