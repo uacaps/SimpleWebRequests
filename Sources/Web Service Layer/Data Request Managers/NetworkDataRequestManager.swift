@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NetworkDataRequestManager: NetworkRequest {
+open class NetworkDataRequestManager: NetworkRequest {
     public init() {}
     
     func loadNetworkRequest(with resource: DataResource, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {

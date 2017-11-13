@@ -16,6 +16,16 @@ public struct DataResource {
     var methodPath: String?
     var query: String?
     var body: Data?
+    
+    public init(urlSessionConfiguration: URLSessionConfiguration = .default, httpMethod: HttpMethod = .get, headers: [String: String]? = nil, baseUrl: String = "", methodPath: String? = nil, query: String? = nil, body: Data? = nil) {
+        self.urlSessionConfiguration = urlSessionConfiguration
+        self.httpMethod = httpMethod
+        self.headers = headers
+        self.baseUrl = baseUrl
+        self.methodPath = methodPath
+        self.query = query
+        self.body = body
+    }
 }
 
 public extension DataResource {
