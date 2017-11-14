@@ -43,7 +43,7 @@ public class JWTBearerPolicy: SecurityPolicy {
         return resource
     }
     
-    public func getToken() {
+    public func getToken(completion: ((Bool) -> Void)? = nil) {
         let resource = DataResource(urlSessionConfiguration: .ephemeral,
                                     httpMethod: .post,
                                     headers: nil,
@@ -56,6 +56,9 @@ public class JWTBearerPolicy: SecurityPolicy {
                 let token = String(data: data, encoding: .utf8)
                 print("Token: \(token ?? "")")
                 self?.authorizationToken = token
+                completion?(true)
+            } else {
+                completion?(false)
             }
         }
     }
