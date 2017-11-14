@@ -17,10 +17,7 @@ public struct MyDataRequestManager: DataRequestManager {
     public var requestManager: APIMethodsProtocol {
         switch apiInformation.dataSource.type {
         case .release, .development:
-            if let securityPolicy = securityPolicy {
-                return MyNetworkDataRequestManager(securityPolicy: securityPolicy)
-            }
-            return MyNetworkDataRequestManager()
+            return MyNetworkDataRequestManager(securityPolicy: securityPolicy)
         case .local:
             return MyLocalDataRequestManager()
         case .mock:

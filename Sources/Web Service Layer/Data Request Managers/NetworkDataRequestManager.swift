@@ -13,7 +13,7 @@ open class NetworkDataRequestManager: NetworkRequest {
     
     public init() {}
     
-    public init(securityPolicy: SecurityPolicy) {
+    public init(securityPolicy: SecurityPolicy?) {
         self.securityPolicy = securityPolicy
     }
     
