@@ -21,23 +21,31 @@ open class NetworkDataRequestManager: NetworkRequest {
         guard let url = resource.url else { return URLSessionTask() }
         
         // Security Policy
-        var secureResource = resource
         if let securityPolicy = securityPolicy {
-            secureResource = securityPolicy.addPolicy(for: resource)
+            let secureResource = securityPolicy.addPolicy(for: resource)
+            return makeNetworkRequest(with: url, httpMethod: secureResource.httpMethod, configuration: secureResource.urlSessionConfiguration, headers: secureResource.headers, body: secureResource.body, completion: completion)
         }
         
-        // Make network request
-        return load(url, httpMethod: secureResource.httpMethod, configuration: secureResource.urlSessionConfiguration, headers: secureResource.headers, body: secureResource.body, completion: { (data, response, error) in
-            let responseData = data
-            var responseError = error
-            
-            // HTTP Error
-            if let httpResponse = response as? HTTPURLResponse, !(200...299 ~= httpResponse.statusCode) {
-                responseError = NSError(domain: "Network Request", code: httpResponse.statusCode, userInfo: nil)
-            }
-            
-            completion(responseData, responseError)
+        // Make network request without security policy
+        return makeNetworkRequest(with: url, httpMethod: resource.httpMethod, configuration: resource.urlSessionConfiguration, headers: resource.headers, body: resource.body, completion: completion)
+    }
+    
+    func makeNetworkRequest(with url: URL, httpMethod: HttpMethod, configuration: URLSessionConfiguration, headers: [String: String]?, body: Data?, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
+        return load(url, httpMethod: httpMethod, configuration: configuration, headers: headers, body: body, completion: { (data, response, error) in
+            self.handleNetworkResponse(data: data, urlResponse: response, error: error, completion: completion)
         })
+    }
+    
+    func handleNetworkResponse(data: Data?, urlResponse: URLResponse?, error: Error?, completion: @escaping (Data?, Error?) -> Void) {
+        let responseData = data
+        var responseError = error
+        
+        // HTTP Error
+        if let httpResponse = urlResponse as? HTTPURLResponse, !(200...299 ~= httpResponse.statusCode) {
+            responseError = NSError(domain: "Network Request", code: httpResponse.statusCode, userInfo: nil)
+        }
+        
+        completion(responseData, responseError)
     }
 }
 

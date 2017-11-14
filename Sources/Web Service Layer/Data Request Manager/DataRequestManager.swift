@@ -11,6 +11,7 @@ import Foundation
 public protocol DataRequestManager {
     associatedtype APIMethodsProtocol
     var apiInformation: ApiInformation { get }
+    var securityPolicy: SecurityPolicy? { get }
     var requestManager: APIMethodsProtocol { get }
     
     static var shared: Self { get }

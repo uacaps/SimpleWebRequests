@@ -13,10 +13,14 @@ public struct MyDataRequestManager: DataRequestManager {
     
     public typealias Resource = DataResource
     public var apiInformation: ApiInformation = MyApiInformation()
+    public var securityPolicy: SecurityPolicy? = JWTBearerPolicy(with: "", clientId: "", clientSecret: "")
     public var requestManager: APIMethodsProtocol {
         switch apiInformation.dataSource.type {
         case .release, .development:
-            return MyNetworkDataRequestManager(securityPolicy: MySecurityPolicy())
+            if let securityPolicy = securityPolicy {
+                return MyNetworkDataRequestManager(securityPolicy: securityPolicy)
+            }
+            return MyNetworkDataRequestManager()
         case .local:
             return MyLocalDataRequestManager()
         case .mock:
