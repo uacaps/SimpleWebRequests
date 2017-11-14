@@ -9,13 +9,25 @@
 import Foundation
 
 open class NetworkDataRequestManager: NetworkRequest {
+    public var securityPolicy: SecurityPolicy?
+    
     public init() {}
+    
+    public init(securityPolicy: SecurityPolicy) {
+        self.securityPolicy = securityPolicy
+    }
     
     func loadNetworkRequest(with resource: DataResource, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
         guard let url = resource.url else { return URLSessionTask() }
         
+        // Security Policy
+        var secureResource = resource
+        if let securityPolicy = securityPolicy {
+            secureResource = securityPolicy.addPolicy(for: resource)
+        }
+        
         // Make network request
-        return load(url, httpMethod: resource.httpMethod, configuration: resource.urlSessionConfiguration, headers: resource.headers, body: resource.body, completion: { (data, response, error) in
+        return load(url, httpMethod: secureResource.httpMethod, configuration: secureResource.urlSessionConfiguration, headers: secureResource.headers, body: secureResource.body, completion: { (data, response, error) in
             let responseData = data
             var responseError = error
             

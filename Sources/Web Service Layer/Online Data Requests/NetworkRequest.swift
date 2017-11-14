@@ -15,7 +15,9 @@ public enum HttpMethod: String {
     case delete = "DELETE"
 }
 
-public protocol NetworkRequest {}
+public protocol NetworkRequest {
+    var securityPolicy: SecurityPolicy? { get set }
+}
 
 public extension NetworkRequest {
     public func load(_ url: URL, httpMethod: HttpMethod, configuration: URLSessionConfiguration, headers: [String: String]?, body: Data?, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> URLSessionTask {

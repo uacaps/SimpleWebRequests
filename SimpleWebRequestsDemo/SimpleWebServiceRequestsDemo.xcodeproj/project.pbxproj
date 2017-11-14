@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A31798F1FBB549D00D77941 /* SecurityPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31798E1FBB549D00D77941 /* SecurityPolicy.swift */; };
+		6A3179911FBB5E0E00D77941 /* MySecurityPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3179901FBB5E0E00D77941 /* MySecurityPolicy.swift */; };
 		6A3712341F95018600DE77C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3712331F95018600DE77C7 /* AppDelegate.swift */; };
 		6A37123B1F95018600DE77C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A37123A1F95018600DE77C7 /* Assets.xcassets */; };
 		6A37123E1F95018600DE77C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A37123C1F95018600DE77C7 /* LaunchScreen.storyboard */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A31798E1FBB549D00D77941 /* SecurityPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityPolicy.swift; sourceTree = "<group>"; };
+		6A3179901FBB5E0E00D77941 /* MySecurityPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecurityPolicy.swift; sourceTree = "<group>"; };
 		6A3712301F95018600DE77C7 /* SimpleWebServiceRequestsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWebServiceRequestsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3712331F95018600DE77C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A37123A1F95018600DE77C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A31798D1FBB530100D77941 /* Security Policy */ = {
+			isa = PBXGroup;
+			children = (
+				6A31798E1FBB549D00D77941 /* SecurityPolicy.swift */,
+			);
+			path = "Security Policy";
+			sourceTree = "<group>";
+		};
 		6A3712271F95018600DE77C7 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +156,7 @@
 				6A37127A1F95029900DE77C7 /* MyLocalDataRequestManager.swift */,
 				6A37127E1F95029900DE77C7 /* MyDataRequestManager.swift */,
 				6A3712801F95029900DE77C7 /* MyApiInformation.swift */,
+				6A3179901FBB5E0E00D77941 /* MySecurityPolicy.swift */,
 				6A37127C1F95029900DE77C7 /* Models */,
 			);
 			path = "My Web Service Layer";
@@ -169,6 +182,7 @@
 		6A3712CC1F95070D00DE77C7 /* Web Service Layer */ = {
 			isa = PBXGroup;
 			children = (
+				6A31798D1FBB530100D77941 /* Security Policy */,
 				6A3712CD1F95070D00DE77C7 /* Data Request Manager */,
 				6A3712CF1F95070D00DE77C7 /* Api Information */,
 				6A3712D51F95070D00DE77C7 /* Data Request Managers */,
@@ -346,6 +360,7 @@
 				6A3712341F95018600DE77C7 /* AppDelegate.swift in Sources */,
 				6A3712E91F95072600DE77C7 /* DataResources.swift in Sources */,
 				6A3712E11F95071200DE77C7 /* DataRequestManager.swift in Sources */,
+				6A3179911FBB5E0E00D77941 /* MySecurityPolicy.swift in Sources */,
 				6A3712841F9502A500DE77C7 /* MyDataRequestManager.swift in Sources */,
 				6A3712E71F95071F00DE77C7 /* JSONCoder.swift in Sources */,
 				6A3712811F9502A200DE77C7 /* Article.swift in Sources */,
@@ -358,6 +373,7 @@
 				6A3712EB1F95072A00DE77C7 /* DataRequest.swift in Sources */,
 				6A3712861F9502A500DE77C7 /* MyApiInformation.swift in Sources */,
 				6AC3E3721FB223FA0074FF09 /* MyNetworkDataRequestManager.swift in Sources */,
+				6A31798F1FBB549D00D77941 /* SecurityPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
