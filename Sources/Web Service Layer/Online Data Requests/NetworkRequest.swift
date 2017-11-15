@@ -6,7 +6,7 @@
 //  Copyright © 2017 Niklas Fahl. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public enum HttpMethod: String {
     case get = "GET"
@@ -21,6 +21,9 @@ public protocol NetworkRequest {
 
 public extension NetworkRequest {
     public func load(_ url: URL, httpMethod: HttpMethod, configuration: URLSessionConfiguration, headers: [String: String]?, body: Data?, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> URLSessionTask {
+        // Show loading indicator
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         // Create Session
         let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)
         
@@ -35,6 +38,9 @@ public extension NetworkRequest {
         
         // Run Task
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            // Hide loading indicator
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
             completion(data, response, error)
         })
         task.resume()
