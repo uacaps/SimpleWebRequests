@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleWebRequests'
-  s.version          = '4.1.6'
+  s.version          = '4.1.7'
   s.summary          = 'iOS web requests made simple.'
 
 # This description is used to generate tags and improve search results.

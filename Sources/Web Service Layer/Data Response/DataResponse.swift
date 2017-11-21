@@ -17,12 +17,9 @@ class DataResponse {
         }
         
         // Decode JSON data into object if data is available
-        do {
-            let model: Model = try JSONDecoder().decode(Model.self, from: data)
-            return (model, nil)
-        } catch let error {
-            print("JSON Coder: Could not decode JSON data to object. Error: \(error)")
-            return (nil, error)
+        guard let model: Model = JSONCoder.decode(data: data) else {
+            return (nil, NSError(domain: "JSON Coder: Could not decode JSON data to object.", code: 0, userInfo: nil))
         }
+        return (model, nil)
     }
 }
