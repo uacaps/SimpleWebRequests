@@ -14,8 +14,8 @@ public class JWTBearerPolicy: SecurityPolicy {
     var clientSecret: String = ""
     var scopes: [String]?
     
-    var authenticationToken: String?
-    var authorizationToken: String?
+    public var authenticationToken: String?
+    public var authorizationToken: String?
     
     public init(with tokenEndpoint: String, clientId: String, clientSecret: String, scopes: [String]? = nil) {
         self.tokenEndpoint = tokenEndpoint

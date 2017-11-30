@@ -17,7 +17,7 @@ open class NetworkDataRequestManager: NetworkRequest {
         self.securityPolicy = securityPolicy
     }
     
-    func loadNetworkRequest(with resource: DataResource, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
+    public func loadNetworkRequest(with resource: DataResource, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
         guard let url = resource.url else { return URLSessionTask() }
         
         // Security Policy
