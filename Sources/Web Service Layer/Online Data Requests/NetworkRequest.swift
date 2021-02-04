@@ -41,6 +41,18 @@ public extension NetworkRequest {
             // Hide loading indicator
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
+            #if DEBUG
+                if let url = url?.absoluteString {
+                    print("URL", url)
+                }                                                       
+                if let statusCode = (response as? HTTPURLRespone)?.statusCode {
+                    print("Status Code", statusCode)
+                }                                                       
+                if let data = data {
+                    print("JSON Data", String(data: data, encoding: .utf8)
+                }    
+            #endif                                                           
+                                                                       
             completion(data, response, error)
         })
         task.resume()
