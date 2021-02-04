@@ -31,18 +31,16 @@ public struct DataResource {
 public extension DataResource {
     // Full Url
     var url: URL? {
-        var url = baseUrl
-        
-        guard let methodPath = methodPath else {
-            return URL(string: url)
-        }
-        url += "/" + methodPath
-        
-        guard let query = query else {
-            return URL(string: url)
-        }
-        url += query
-        
-        return URL(string: url)
+        var url = baseUrl.trimmingCharacters(in: CharacterSet(["/"]))
+
+		if let methodPath = methodPath {
+			url += "/" + methodPath.trimmingCharacters(in: CharacterSet(["/"]))
+		}
+
+		if let query = query {
+			url += query
+		}
+
+		return URL(string: url)
     }
 }
