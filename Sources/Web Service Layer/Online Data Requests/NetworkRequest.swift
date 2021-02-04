@@ -49,7 +49,7 @@ public extension NetworkRequest {
                     print("Status Code", statusCode)
                 }                                                       
                 if let data = data {
-                    print("JSON Data", String(data: data, encoding: .utf8)
+                    print("JSON Data", String(data: data, encoding: .utf8))
                 }    
             #endif                                                           
                                                                        
