@@ -42,15 +42,13 @@ public extension NetworkRequest {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             #if DEBUG
-                if let url = url?.absoluteString {
-                    print("URL", url)
-                }                                                       
-                if let statusCode = (response as? HTTPURLRespone)?.statusCode {
-                    print("Status Code", statusCode)
-                }                                                       
-                if let data = data {
-                    print("JSON Data", String(data: data, encoding: .utf8))
-                }    
+			print("URL", url.absoluteString)
+			if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+				print("Status Code", statusCode)
+			}
+			if let data = data, let dataString = String(data: data, encoding: .utf8) {
+				print("Data", dataString)
+			}
             #endif                                                           
                                                                        
             completion(data, response, error)
