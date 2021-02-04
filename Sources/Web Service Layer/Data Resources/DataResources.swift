@@ -33,14 +33,14 @@ public extension DataResource {
     var url: URL? {
         var url = baseUrl.trimmingCharacters(in: CharacterSet(["/"]))
 
-		if let methodPath = methodPath {
-			url += "/" + methodPath.trimmingCharacters(in: CharacterSet(["/"]))
-		}
+	if let methodPath = methodPath {
+		url += "/" + methodPath.trimmingCharacters(in: CharacterSet(["/"]))
+	}
 
-		if let query = query {
-			url += query
-		}
+	if let query = query {
+		url += query
+	}
 
-		return URL(string: url)
+	return URL(string: url)
     }
 }
